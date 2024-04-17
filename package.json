@@ -1,0 +1,54 @@
+{
+  "name": "vaclient",
+  "productName": "VA Client",
+  "version": "0.1.18",
+  "description": "Client App for VirtuDesk",
+  "main": "src/Main.js",
+  "scripts": {
+    "build": "npm run compile-ui && ./node_modules/.bin/electron .",
+    "buildwin": "npm run compile-ui && .\\node_modules\\.bin\\electron .",
+    "compile-ui": "./node_modules/.bin/node-sass src/scss/theme.scss src/resources/assets/styles/theme.css",
+    "darwin": "electron-packager . VAclient --platform=darwin --arch=x64 --icon=src/icon.icns --out=../_app/builds --overwrite",
+    "win32": "electron-packager . VAclient --platform=win32 --arch=all --icon=src/icon.ico --out=../_app/builds --overwrite",
+    "darwin-make": "electron-installer-dmg ../_app/builds/VAclient-darwin-x64/VAclient.app VAclient --out=../_app/installers/darwin --icon=src/icon.icns",
+    "win32-make": "node src/buildwin.js",
+    "cleanBuilds": "node src/cleanBuilds.js"
+  },
+  "keywords": [],
+  "author": "newtonboy@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "electron-twig": "1.1.1",
+    "form-data": "2.3.2",
+    "glob": "7.0.5",
+    "iohook": "0.1.15",
+    "node-browser-history": "1.0.2",
+    "ps-list": "4.0.0",
+    "screenshot-desktop": "1.7.0",
+    "semver-compare": "^1.0.0",
+    "socket.io-client": "2.0.4",
+    "twig": "1.10.5"
+  },
+  "devDependencies": {
+    "bulma": "0.6.2",
+    "electron": "1.8.2",
+    "electron-wix-msi": "^1.3.0",
+    "node-sass": "4.7.2",
+    "nodeunit": "0.11.2"
+  },
+  "iohook": {
+    "targets": [
+      "node-57",
+      "electron-57"
+    ],
+    "platforms": [
+      "win32",
+      "darwin"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  }
+}

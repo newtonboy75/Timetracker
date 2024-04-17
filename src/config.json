@@ -1,0 +1,29 @@
+{
+    "default": "local",
+    "env": {
+        "local": {
+            "HOST": "http://va.local:8080",
+            "SOCKET_HOST": "http://127.0.0.1", 
+            "PORT": "3000",
+            "IDLE_TIMEOUT_SECONDS": "300",
+            "PING_SECONDS": "180000",
+            "DEBUG": "1"
+        },
+        "live": {
+            "HOST": "https://portal.myvirtudesk.com",
+            "SOCKET_HOST": "http://portal.myvirtudesk.com", 
+            "PORT": "3000",
+            "IDLE_TIMEOUT_SECONDS": "300",
+            "PING_SECONDS": "180000",
+            "DEBUG": "0"
+        },
+        "staging": {
+            "HOST": "https://portal-staging.myvirtudesk.com",
+            "SOCKET_HOST": "http://portal-staging.myvirtudesk.com", 
+            "PORT": "3000",
+            "IDLE_TIMEOUT_SECONDS": "300",
+            "PING_SECONDS": "180000",
+            "DEBUG": "0"
+        }
+    }
+}
